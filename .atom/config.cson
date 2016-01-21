@@ -1,0 +1,13 @@
+"*":
+  core:
+    themes: [
+      "atom-solarized-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+  "exception-reporting":
+    userId: "d583951f-c80f-3978-b89a-7dfbf6a3aeb2"
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
