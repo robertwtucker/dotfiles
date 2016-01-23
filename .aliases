@@ -8,7 +8,6 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
-alias j="jobs"
 
 alias cp="cp -v"
 alias mv="mv -v"
