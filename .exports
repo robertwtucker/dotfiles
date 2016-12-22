@@ -17,3 +17,6 @@ export CLICOLOR=1
 # jEnv
 export JENV_ROOT=/usr/local/var/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
