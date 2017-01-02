@@ -1,9 +1,8 @@
 'packages': [
   'date'
-  'ex-mode'
   'parcel'
   'release-notes'
-  'vim-mode'
+  'vim-mode-plus'
   'atom-dark-syntax'
   'atom-dark-ui'
   'atom-light-syntax'

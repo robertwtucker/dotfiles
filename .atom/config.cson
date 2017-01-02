@@ -1,5 +1,6 @@
 "*":
   core:
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
@@ -8,6 +9,8 @@
     invisibles: {}
   "exception-reporting":
     userId: "d583951f-c80f-3978-b89a-7dfbf6a3aeb2"
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
