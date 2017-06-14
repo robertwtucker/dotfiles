@@ -18,6 +18,7 @@ export CLICOLOR=1
 export RBENV_ROOT="$(brew --prefix rbenv)"
 export GEM_HOME="$(brew --prefix)/opt/gems"
 export GEM_PATH="$(brew --prefix)/opt/gems"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # jEnv
 export JENV_ROOT=/usr/local/var/jenv
