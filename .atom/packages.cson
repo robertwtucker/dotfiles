@@ -1,5 +1,6 @@
 packages: [
   "date"
+  "language-docker"
   "package-sync"
   "pretty-json"
   "release-notes"

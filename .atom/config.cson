@@ -15,5 +15,9 @@
   "tree-view":
     hideVcsIgnoredFiles: true
   "vim-mode": {}
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   welcome:
     showOnStartup: false
