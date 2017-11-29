@@ -14,15 +14,3 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Force color in terminal
 export CLICOLOR=1
 
-# sudo-less gems
-export RBENV_ROOT="$(brew --prefix rbenv)"
-export GEM_HOME="$(brew --prefix)/opt/gems"
-export GEM_PATH="$(brew --prefix)/opt/gems"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# jEnv
-export JENV_ROOT=/usr/local/var/jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
-# fastlane
-export PATH="$HOME/.fastlane/bin:$PATH"
