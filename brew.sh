@@ -20,78 +20,44 @@ brew update
 brew upgrade --all
 
 # Install brew packages
+brew install awscli
+brew install cdrtools
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-
+brew install docker-ls
 brew install git
-brew install gradle
 brew install imagemagick --with-webp
-brew install jenv
-brew install maven
-brew install node
-brew install ruby
-brew install tree
+brew install nvm
 brew install wget --with-iri
-brew install cdrtools
+brew install yarn
 
 # Assumes environment already initialized with:
 # HOMEBREW_CASK_OPTS=--appdir=/Applications
 
-# Core
-brew cask install java
-brew cask install xquartz
-
 # Daily
-brew cask install dropbox
-brew cask install evernote
-brew cask install flux
-brew cask install google-chrome
-brew cask install lastpass
-brew cask install runescape
-brew cask install skype
-brew cask install sophos-anti-virus-home-edition
-brew cask install sonos
-brew cask install spotify
+brew install --cask docker
+brew install --cask dropbox
+brew install --cask google-chrome
+brew install --cask lastpass
+brew install --cask sophos-anti-virus-home-edition
+brew install --cask spotify
 
 # Dev
-brew cask install atom
-brew cask install datagrip
-brew cask install intellij-idea
-brew cask install jd-gui
-brew cask install mysqlworkbench
-brew cask install rubymine
-brew cask install sqlitebrowser
-brew cask install virtualbox
-# brew cask install virtualbox-extension-pack
-brew cask install webstorm
+brew install --cask jd-gui
+brew install --cask jetbrains-toolbox
+brew install --cask mysqlworkbench
+brew install --cask sqlitebrowser
+brew install --cask visual-studio-code
 
 # Productivity/Utilities
-brew cask install cyberduck
-brew cask install dockertoolbox
-brew cask install gyazo
-brew cask install handbrake
-brew cask install iterm2
-brew cask install joinme
-brew cask install microsoft-lync
-brew cask install microsoft-office
-brew cask install onyx
-brew cask install slack
-brew cask install teamspeak-client
-brew cask install tether
-brew cask install the-unarchiver
-brew cask install tigervnc-viewer
-brew cask install utorrent
-brew cask install vlc
-
-# Not available/App store
-# boingo
-# hexminer
-# macx-dvd-ripper-pro
-# microsoft-remote-desktop
-# mint-quickview
-# swipes
-# twitter
-# xchat-azure
+brew install --cask cyberduck
+brew install --cask discord
+brew install --cask gimp
+brew install --cask handbrake
+brew install --cask iterm2
+brew install --cask ngrok
+brew install --cask slack
+brew install --cask the-unarchiver
 
 # Remove outdated versions from the cellar.
 brew cleanup
