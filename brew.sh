@@ -28,6 +28,7 @@ brew install docker-ls
 brew install git
 brew install imagemagick --with-webp
 brew install nvm
+brew install tmux
 brew install wget --with-iri
 brew install yarn
 
