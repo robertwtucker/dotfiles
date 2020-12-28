@@ -20,6 +20,7 @@ brew update
 brew upgrade --all
 
 # Install brew packages
+brew install ansifilter
 brew install awscli
 brew install cdrtools
 brew install coreutils
