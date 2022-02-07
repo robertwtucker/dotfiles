@@ -25,6 +25,7 @@ brew install awscli
 brew install cdrtools
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+brew install docker
 brew install docker-ls
 brew install git
 brew install imagemagick --with-webp
@@ -37,7 +38,6 @@ brew install yarn
 # HOMEBREW_CASK_OPTS=--appdir=/Applications
 
 # Daily
-brew install --cask docker
 brew install --cask dropbox
 brew install --cask google-chrome
 brew install --cask lastpass
