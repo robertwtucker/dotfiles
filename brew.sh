@@ -21,15 +21,27 @@ brew upgrade --all
 
 # Install brew packages
 brew install ansifilter
+brew install asciinema
 brew install awscli
+brew install azure-cli
 brew install cdrtools
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 brew install docker
+brew install docker-credential-helper
 brew install docker-ls
+brew install exa
 brew install git
+brew install git-filter-repo
+brew install go
+brew install helm
 brew install imagemagick --with-webp
+brew install kubernetes-cli
+brew install markdownlint-cli
 brew install nvm
+brew install pandoc
+brew install podman
+brew install shellcheck
 brew install tmux
 brew install wget --with-iri
 brew install yarn
@@ -38,17 +50,18 @@ brew install yarn
 # HOMEBREW_CASK_OPTS=--appdir=/Applications
 
 # Daily
+brew install --cask dash
 brew install --cask dropbox
 brew install --cask google-chrome
+brew install --cask iterm2
 brew install --cask lastpass
-brew install --cask sophos-anti-virus-home-edition
-brew install --cask spotify
 
 # Dev
+brew install --cask beyond-compare
 brew install --cask jd-gui
 brew install --cask jetbrains-toolbox
-brew install --cask mysqlworkbench
-brew install --cask sqlitebrowser
+brew install --cask pgadmin4
+brew install --cask postman
 brew install --cask visual-studio-code
 
 # Productivity/Utilities
@@ -56,8 +69,9 @@ brew install --cask cyberduck
 brew install --cask discord
 brew install --cask gimp
 brew install --cask handbrake
-brew install --cask iterm2
 brew install --cask ngrok
+brew install --cask private-internet-access
+brew install --cask shottr
 brew install --cask slack
 brew install --cask the-unarchiver
 
