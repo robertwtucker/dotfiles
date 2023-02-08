@@ -1,0 +1,21 @@
+[submodule ".vim/pack/bundle/opt/vim-surround"]
+	path = .vim/pack/bundle/opt/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/pack/bundle/opt/vim-fugitive"]
+	path = .vim/pack/bundle/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/pack/bundle/opt/nerdtree"]
+	path = .vim/pack/bundle/opt/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".vim/pack/bundle/opt/vim-airline"]
+	path = .vim/pack/bundle/opt/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".vim/pack/bundle/opt/vim-airline-themes"]
+	path = .vim/pack/bundle/opt/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/pack/bundle/opt/NeoSolarized"]
+	path = .vim/pack/bundle/opt/NeoSolarized
+	url = https://github.com/overcache/NeoSolarized.git
+[submodule ".vim/pack/bundle/opt/editorconfig-vim"]
+	path = .vim/pack/bundle/opt/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

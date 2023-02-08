@@ -59,19 +59,26 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-filetype plugin indent on
-syntax on
+" Turn on hybrid line nubering
+set number relativenumber
 
-call plug#begin('~/.vim/plugged')
+" True color setting required for NeoSolarized
+set termguicolors
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
+packadd! NeoSolarized
+packadd! vim-airline
+packadd! vim-airline-themes
+packadd! nerdtree
+packadd! editorconfig-vim
+packadd! vim-fugitive
+packadd! vim-surround
 
-call plug#end()
+colorscheme NeoSolarized
 
-let g:airline_powerline_fonts = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:airline_powerline_fonts=1
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:NERDTreeDirArrowExpandable='▸'
+let g:NERDTreeDirArrowCollapsible='▾'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
