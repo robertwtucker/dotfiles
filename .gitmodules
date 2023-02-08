@@ -19,3 +19,6 @@
 [submodule ".vim/pack/bundle/opt/editorconfig-vim"]
 	path = .vim/pack/bundle/opt/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/pack/bundle/opt/nerdcommenter"]
+	path = .vim/pack/bundle/opt/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git

@@ -72,6 +72,7 @@ packadd! nerdtree
 packadd! editorconfig-vim
 packadd! vim-fugitive
 packadd! vim-surround
+packadd! nerdcommenter
 
 colorscheme NeoSolarized
 
