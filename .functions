@@ -3,9 +3,3 @@ function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
-# Check for updates to cask-managed apps
-function chkcasks() {
-	for item in `cask list`; do
-		echo `cask info $item` | grep "Not installed" | awk '{print $1}';
-	done
-}
