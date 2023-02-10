@@ -22,3 +22,6 @@
 [submodule ".vim/pack/bundle/opt/nerdcommenter"]
 	path = .vim/pack/bundle/opt/nerdcommenter
 	url = https://github.com/preservim/nerdcommenter.git
+[submodule "/Users/r.tucker/.dotfiles/.tmux/plugins/tpm"]
+	path = /Users/r.tucker/.dotfiles/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
