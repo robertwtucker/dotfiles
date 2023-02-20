@@ -25,6 +25,7 @@ brew install asciinema
 brew install awscli
 brew install azure-cli
 brew install cdrtools
+brew install corepack
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 brew install docker
@@ -36,25 +37,31 @@ brew install git-filter-repo
 brew install go
 brew install helm
 brew install imagemagick --with-webp
+brew install jq
+brew install k9s
 brew install kubernetes-cli
+brew install lazygit
 brew install markdownlint-cli
+brew install marksman
+brew install neovim
 brew install nvm
 brew install pandoc
 brew install podman
 brew install shellcheck
 brew install tmux
 brew install wget --with-iri
-brew install yarn
+brew install yaml-language-server
 
 # Assumes environment already initialized with:
 # HOMEBREW_CASK_OPTS=--appdir=/Applications
 
 # Daily
+brew install --cask 1password
+brew install --cask 1password-cli
 brew install --cask dash
 brew install --cask dropbox
 brew install --cask google-chrome
 brew install --cask iterm2
-brew install --cask lastpass
 
 # Dev
 brew install --cask beyond-compare
@@ -69,6 +76,8 @@ brew install --cask cyberduck
 brew install --cask discord
 brew install --cask gimp
 brew install --cask handbrake
+brew install --cask hiddenbar
+brew install --cask kube-forwarder
 brew install --cask ngrok
 brew install --cask private-internet-access
 brew install --cask shottr
