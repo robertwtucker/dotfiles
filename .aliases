@@ -1,14 +1,9 @@
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias cask="brew cask"
-alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias md="mkdir $1 && chdir $1"
-alias p="cd ~/Projects"
-alias g="git"
-alias h="history"
 
 alias cp="cp -v"
 alias mv="mv -v"
@@ -52,3 +47,5 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
   alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 fi
+
+alias oldbrew="/usr/local/bin/brew"
