@@ -1,4 +1,7 @@
-BREW_PREFIX=$(brew --prefix)
+# Homebrew
+ARCH=$(uname -m)
+[[ "$ARCH" = "x86_64" ]] && BREW_PREFIX="/usr/local"
+[[ "$ARCH" = "arm64" ]] && BREW_PREFIX="/opt/homebrew" && export PATH="${BREW_PREFIX}/bin:$PATH"
 
 # nvim as default
 export EDITOR="nvim"
@@ -25,6 +28,4 @@ export NVM_DIR="$HOME/.nvm"
 export GOLANG=$HOME/go
 export PATH=$PATH:$GOLANG/bin
 
-# Homebrew
-export PATH="$PATH:${BREW_PREFIX}/sbin"
 
