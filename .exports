@@ -1,6 +1,7 @@
-# vim as default
-export EDITOR="vim"
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+BREW_PREFIX=$(brew --prefix)
+
+# nvim as default
+export EDITOR="nvim"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
@@ -15,6 +16,15 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Force color in terminal
 export CLICOLOR=1
 
+# Node environment
+export NVM_DIR="$HOME/.nvm"
+[ -s "${BREW_PREFIX}/opt/nvm/nvm.sh" ] && . "${BREW_PREFIX}/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "${BREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm" ] && . "${BREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Go environment
 export GOLANG=$HOME/go
-export $PATH=$PATH:$GOLANG/bin
+export PATH=$PATH:$GOLANG/bin
+
+# Homebrew
+export PATH="$PATH:${BREW_PREFIX}/sbin"
+

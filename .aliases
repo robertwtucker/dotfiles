@@ -1,9 +1,17 @@
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias md="mkdir $1 && chdir $1"
+alias dev="cd ~/Documents/Dev"
+
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias lg="lazygit"
+alias path="echo -e ${PATH//:/\\n}"
+alias tarc="tar -cvzf"
+alias tarx="tar -xvzf"
+alias update="brew update && brew upgrade && brew cleanup && brew doctor"
 
 alias cp="cp -v"
 alias mv="mv -v"
@@ -48,4 +56,3 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 fi
 
-alias oldbrew="/usr/local/bin/brew"
