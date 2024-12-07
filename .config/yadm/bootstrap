@@ -1,39 +1,36 @@
 #!/bin/bash
 
-# Save this file as ~/.config/yadm/bootstrap and make it executable. It will
-# execute all executable files (excluding templates and editor backups) in the
-# ~/.config/yadm/bootstrap.d directory when run.
+set -euo pipefail
 
-set -eu
+if [[ "$(uname -o)" == "Darwin" ]]; then
 
-# Install Homebrew and packages first
-source "$HOME/.config/yadm/brew.sh"
-
-# Switch to zsh
-if [[ "$SHELL" != *"zsh" ]]; then
-	chsh -s $(which zsh)
-fi
-
-# Directory to look for bootstrap executables in
-BOOTSTRAP_D="${BASH_SOURCE[0]}.d"
-
-if [[ ! -d "$BOOTSTRAP_D" ]]; then
-	echo "Error: bootstrap directory '$BOOTSTRAP_D' not found" >&2
-	exit 1
-fi
-
-declare -a bootstraps
-while IFS= read -r bootstrap; do
-	if [[ -x "$bootstrap" && ! "$bootstrap" =~ "##" && ! "$bootstrap" =~ ~$ ]]; then
-		bootstraps+=("$bootstrap")
+	# Install Homebrew and packages first
+	if [ ! command -v brew ] >/dev/null 2>&1; then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		echo "Homebrew installed ✅"
 	fi
-done < <(find -L "$BOOTSTRAP_D" -type f | sort)
 
-for bootstrap in "${bootstraps[@]}"; do
-	if ! "$bootstrap"; then
-		echo "Error: bootstrap '$bootstrap' failed" >&2
-		exit 1
+	if [ -f "$HOME/.config/brew/Brewfile" ]; then
+		brew bundle --file="$HOME/.config/brew/Brewfile"
+		echo "Homebrew packages installed ✅"
 	fi
-done
+
+	# Switch to zsh
+	if [[ "$SHELL" != *"zsh" ]]; then
+		chsh -s $(which zsh)
+	fi
+
+	# Install Oh My Zsh
+	if [ ! -d "$HOME/.oh-my-zsh" ]; then
+		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+		[[ -f ".zshrc.pre-oh-my-zsh" ]] && mv ".zshrc.pre-oh-my-zsh" ".zshrc"
+
+		# powerlevel10k Theme
+		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+		echo "Oh My Zsh ✅"
+	fi
+
+fi
 
 echo "Finished processing bootstrap scripts ✅"
