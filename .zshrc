@@ -17,7 +17,7 @@ source "${ZSH}/oh-my-zsh.sh"
 [[ ! -f "${HOME}/.p10k.zsh" ]] || source "${HOME}/.p10k.zsh"
 
 # User configuration
-for file in "${HOME}/.{exports,aliases,functions,extra}"; do
+for file in ~/.{exports,aliases,functions,extra}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
