@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-if [[ "$(uname -o)" == "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
 
 	# Install Homebrew and packages first
 	if [ ! command -v brew ] >/dev/null 2>&1; then
@@ -15,20 +15,11 @@ if [[ "$(uname -o)" == "Darwin" ]]; then
 		echo "Homebrew packages installed ✅"
 	fi
 
-	# Switch to zsh
-	if [[ "$SHELL" != *"zsh" ]]; then
-		chsh -s $(which zsh)
-	fi
-
-	# Install Oh My Zsh
-	if [ ! -d "$HOME/.oh-my-zsh" ]; then
-		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-		[[ -f ".zshrc.pre-oh-my-zsh" ]] && mv ".zshrc.pre-oh-my-zsh" ".zshrc"
-
-		# powerlevel10k Theme
-		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-		echo "Oh My Zsh ✅"
+	# Switch to fish as the default shell
+	if command -v fish >/dev/null 2>&1; then
+		echo $(which fish) | sudo tee -a /etc/shells
+		chsh -s $(which fish)
+		echo "Set fish as the default shell ✅"
 	fi
 
 fi
