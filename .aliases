@@ -26,7 +26,7 @@ alias egrep="egrep --color=auto"
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
-else # OS X `ls`
+else # MacOS `ls`
     colorflag="-G"
 fi
 
@@ -45,16 +45,16 @@ alias ls="command ls ${colorflag}"
 alias fs="stat -f \"%z bytes\""
 alias size="du -sh"
 
-# Aliases specific to OS X
+# Aliases specific to MacOS
 if [ "$(uname -s)" = "Darwin" ]; then
-  # OS X has no `md5sum`, so use `md5` as a fallback
+  # MacOS has no `md5sum`, so use `md5` as a fallback
   command -v md5sum > /dev/null || alias md5sum="md5"
 
-  # OS X has no `sha1sum`, so use `shasum` as a fallback
+  # MacOS has no `sha1sum`, so use `shasum` as a fallback
   command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
   # Show/hide hidden files in Finder
-  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+  alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+  alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 fi
 
