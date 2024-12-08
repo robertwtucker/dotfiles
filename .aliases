@@ -2,18 +2,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias devd="cd ~/Documents/Dev"
-
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias gpo="git push origin"
-alias gpot="git push origin --tags"
-alias lg="lazygit"
 alias path="echo -e \"${PATH//:/\n}\""
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"
-alias update="brew update && brew upgrade && brew cleanup && brew doctor"
 
 alias cp="cp -v"
 alias mv="mv -v"
@@ -47,6 +38,16 @@ alias size="du -sh"
 
 # Aliases specific to MacOS
 if [ "$(uname -s)" = "Darwin" ]; then
+  alias dl="cd ~/Downloads"
+  alias dt="cd ~/Desktop"
+  alias devd="cd ~/Documents/Dev"
+
+  alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+  alias gpo="git push origin"
+  alias gpot="git push origin --tags"
+  alias lg="lazygit"
+  alias update="brew update && brew upgrade && brew cleanup && brew doctor"
+
   # MacOS has no `md5sum`, so use `md5` as a fallback
   command -v md5sum > /dev/null || alias md5sum="md5"
 
