@@ -23,10 +23,10 @@ abbr -a gl git log
 abbr -a glo git log --oneline --decorate --graph
 abbr -a gm git merge
 abbr -a gmff git merge --ff-only
+abbr -a gpl git pull
 abbr -a gpo git push origin
 abbr -a gpom git push origin master
 abbr -a gpot git push origin --tags
-abbr -a gpu git pull
 abbr -a grbm git rebase master
 abbr -a gst git status
 abbr -a gts git tag --sign
@@ -37,7 +37,8 @@ abbr -a ya yadm add
 abbr -a yc yadm commit
 abbr -a yd yadm diff
 abbr -a yds yadm diff --staged
-abbr -a yp yadm push
+abbr -a ypl yadm pull
+abbr -a ypu yadm push
 abbr -a yst yadm status
 
 # kubectl abbreviations
@@ -55,7 +56,3 @@ abbr -a kgp kubectl get pod
 abbr -a kgs kubectl get service
 abbr -a kgss kubectl get statefulset
 abbr -a kgsec kubectl get secret
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/robert/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
