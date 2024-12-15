@@ -13,7 +13,7 @@ abbr -a ga git add
 abbr -a gb git branch
 abbr -a gbD git branch --delete --force
 abbr -a gc git commit
-abbr -a gcam git commit --add --message
+abbr -a gcam git commit -am
 abbr -a gcb git checkout -b
 abbr -a gco git checkout
 abbr -a gcm git checkout master
@@ -29,7 +29,7 @@ abbr -a gpom git push origin master
 abbr -a gpot git push origin --tags
 abbr -a grbm git rebase master
 abbr -a gst git status
-abbr -a gts git tag --sign
+abbr -a gts git tag -s -m ""
 
 # yadm abbreviations
 abbr -a y yadm
@@ -43,10 +43,10 @@ abbr -a yst yadm status
 
 # kubectl abbreviations
 abbr -a k kubectl
-abbr -a kaf kubectl apply --filename
+abbr -a kaf kubectl apply -f
 abbr -a kcp kubectl cp
 abbr -a kdel kubectl delete
-abbr -a kdelf kubectl delete --filename
+abbr -a kdelf kubectl delete -f
 abbr -a kg kubectl get
 abbr -a kga kubectl get all
 abbr -a kgc kubectl get configmap
