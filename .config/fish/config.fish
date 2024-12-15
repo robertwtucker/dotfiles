@@ -11,8 +11,8 @@ set -gx GOLANG $HOME/go
 abbr -a g git
 abbr -a ga git add
 abbr -a gb git branch
-abbr -a gbD git branch --delete --force
-abbr -a gc git commit
+abbr -a gbD git branch -D
+abbr -a gc git commit -m
 abbr -a gcam git commit -am
 abbr -a gcb git checkout -b
 abbr -a gco git checkout
@@ -34,7 +34,7 @@ abbr -a gts git tag -s -m ""
 # yadm abbreviations
 abbr -a y yadm
 abbr -a ya yadm add
-abbr -a yc yadm commit
+abbr -a yc yadm commit -m
 abbr -a yd yadm diff
 abbr -a yds yadm diff --staged
 abbr -a ypl yadm pull
