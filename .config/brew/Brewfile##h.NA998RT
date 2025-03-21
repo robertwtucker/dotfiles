@@ -11,7 +11,7 @@ brew "cosign"
 brew "docker"
 brew "docker-credential-helper"
 brew "eza"
-brew "fastlane"
+brew "fastlane!Gmc#2015#Presales!"
 brew "fish"
 brew "fisher"
 brew "git"
@@ -71,19 +71,14 @@ cask "visual-studio-code"
 cask "vlc"
 cask "vmware-fusion"
 cask "warp"
-cask "zed"
 cask "zoom"
 mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Flycut", id: 442160987
-mas "GarageBand", id: 682658836
 mas "Hand Mirror", id: 1502839586
-mas "Helium", id: 1054607607
 mas "HP Smart", id: 1474276998
-mas "iMovie", id: 408981434
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
 vscode "1password.op-vscode"
 vscode "42crunch.vscode-openapi"
