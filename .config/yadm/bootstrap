@@ -5,8 +5,11 @@ set -euo pipefail
 if [[ "$(uname -s)" == "Darwin" ]]; then
 
 	# Install Homebrew and packages first
-	if [ ! command -v brew ] >/dev/null 2>&1; then
+	if ! command -v brew >/dev/null 2>&1; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if [[ "$(uname -p)" == "arm" ]]; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
 		echo "Homebrew installed ✅"
 	fi
 
@@ -16,7 +19,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	fi
 
 	# Switch to fish as the default shell
-	if command -v fish >/dev/null 2>&1; then
+	if ! command -v fish >/dev/null 2>&1; then
 		echo $(which fish) | sudo tee -a /etc/shells
 		chsh -s $(which fish)
 		echo "Set fish as the default shell ✅"
