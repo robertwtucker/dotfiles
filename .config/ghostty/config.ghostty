@@ -1,0 +1,9 @@
+# Select Themee
+theme = "TokyoNight"
+
+# Map Ctrl + [ to Esc
+keybind = ctrl+left_bracket=text:\x1b
+
+# Copy selected text to the clipboard automatically
+copy-on-select = clipboard
+
