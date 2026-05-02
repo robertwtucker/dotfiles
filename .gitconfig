@@ -2,6 +2,8 @@
   path = ~/.gitconfig.local
 [core]
   excludesfile = ~/.gitignore
+  longpaths = true
+  autocrlf = input
 [init]
   defaultBranch = master
 [filter "lfs"]
@@ -15,5 +17,14 @@
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
   gpgsign = true
+  template = /Users/robert/.stCommitMsg
 [tag]
   gpgsign = true
+[credential]
+  helper = manager
+  helper =
+  helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://bitbucket.saquad.zeta1-andromeda.guidewire.net"]
+  provider = bitbucket
+[credential "https://dev.azure.com"]
+  useHttpPath = true

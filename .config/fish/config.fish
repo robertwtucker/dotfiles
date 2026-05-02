@@ -12,6 +12,7 @@ abbr -a g git
 abbr -a ga git add
 abbr -a gb git branch
 abbr -a gbD git branch -D
+abbr -a gbl git branch --list
 abbr -a gc git commit -m
 abbr -a gcam git commit -am
 abbr -a gcb git checkout -b
