@@ -1,1 +1,2 @@
 .gitconfig.local*
+.config/fish/conf.d/guidewire.fish
