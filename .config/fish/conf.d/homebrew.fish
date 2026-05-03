@@ -1,4 +1,7 @@
-for bindir in /usr/local/bin /opt/homebrew/bin
-    test -d $bindir && fish_add_path -p $bindir
+if command -q brew
+    eval (brew shellenv)
+else
+    for bindir in /usr/local/bin /opt/homebrew/bin
+        test -d $bindir && fish_add_path -p $bindir
+    end
 end
-type -q brew && eval (brew shellenv)
