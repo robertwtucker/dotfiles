@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(~/vault/**)",
+      "Write(~/vault/**)",
+      "Bash(cat ~/vault/**)",
+      "Bash(ls ~/vault/**)",
+      "Bash(find ~/vault/**)",
+      "Bash(mkdir -p ~/vault/**)",
+      "Bash(mv ~/vault/**)",
+      "Bash(cp ~/vault/**)",
+      "Bash(kubectl get *)",
+      "Bash(pnpm outdated *)"
+    ],
+    "deny": ["Bash(rm -rf ~/vault*)", "Read(./.env*)", "Read(./secrets/**)"]
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": true,
+    "learning-output-style@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "editorMode": "vim",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-notify.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
