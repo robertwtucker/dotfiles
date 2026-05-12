@@ -4,4 +4,6 @@ function fish_user_key_bindings
     bind -M insert \cf accept-autosuggestion
     # Optional: also bind for normal/default mode
     bind \cf accept-autosuggestion
+    # Try binding Ctrl+[ to Esc for better Vim compatibility in claude code
+    bind \c\[ \e
 end
