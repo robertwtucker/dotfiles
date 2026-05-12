@@ -5,7 +5,7 @@ font-family = "JetBrainsMono Nerd Font"
 theme = "TokyoNight"
 
 # Map Ctrl + [ to Esc
-keybind = ctrl+left_bracket=esc
+keybind = ctrl+left_bracket=text:\x1b
 
 # Copy selected text to the clipboard automatically
 copy-on-select = "clipboard"
