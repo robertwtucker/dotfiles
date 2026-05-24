@@ -10,11 +10,29 @@
       "Bash(mv ~/vault/**)",
       "Bash(cp ~/vault/**)",
       "Bash(kubectl get *)",
-      "Bash(pnpm outdated *)"
+      "Bash(pnpm outdated *)",
+      "mcp__para-vault__*"
     ],
-    "deny": ["Bash(rm -rf ~/vault*)", "Read(./.env*)", "Read(./secrets/**)"]
+    "deny": [
+      "Bash(rm -rf ~/vault*)",
+      "Read(./.env*)",
+      "Read(./secrets/**)"
+    ]
   },
   "model": "opus",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-notify.sh"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
@@ -28,8 +46,7 @@
     "typescript-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": true,
-    "learning-output-style@claude-plugins-official": true
+    "explanatory-output-style@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-code-warp": {
@@ -40,18 +57,5 @@
     }
   },
   "effortLevel": "medium",
-  "editorMode": "vim",
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/tmux-notify.sh"
-          }
-        ]
-      }
-    ]
-  }
+  "editorMode": "vim"
 }
