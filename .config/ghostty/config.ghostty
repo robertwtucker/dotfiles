@@ -1,8 +1,20 @@
+# Frosted Glass and Opacity
+background-blur = macos-glass-regular
+background-opacity = 0.9
+
+# Title Bar
+macos-titlebar-style = transparent
+window-theme = system
+
 # Set Font
-font-family = "JetBrainsMono Nerd Font"
+font-family = "JetBrains Mono Nerd Font"
+font-size = 14
+font-thicken = true
+cursor-style = block
+cursor-style-blink = false
 
 # Select Theme
-theme = "TokyoNight"
+theme = TokyoNight
 
 # Map Ctrl + [ to Esc
 keybind = ctrl+left_bracket=text:\x1b
