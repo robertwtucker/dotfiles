@@ -5,3 +5,5 @@ else
         test -d $bindir && fish_add_path -p $bindir
     end
 end
+
+set -x HOMEBREW_NO_ASK 1
