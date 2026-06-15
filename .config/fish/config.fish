@@ -57,3 +57,9 @@ abbr -a kgp kubectl get pod
 abbr -a kgs kubectl get service
 abbr -a kgss kubectl get statefulset
 abbr -a kgsec kubectl get secret
+
+# tmux abbreviations
+abbr -a tl tmux ls
+abbr -a ta tmux attach
+abbr -a tk tmux kill-session
+abbr -a tn tmux new-session
