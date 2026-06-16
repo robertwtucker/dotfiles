@@ -60,6 +60,6 @@ abbr -a kgsec kubectl get secret
 
 # tmux abbreviations
 abbr -a tl tmux ls
-abbr -a ta tmux attach
+abbr -a ta tmux attach -t
 abbr -a tk tmux kill-session
-abbr -a tn tmux new-session
+abbr -a tn tmux new -s
