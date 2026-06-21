@@ -14,9 +14,12 @@
       "mcp__para-vault__*",
       "mcp__obsidian__*"
     ],
-    "deny": ["Bash(rm -rf ~/vault*)", "Read(./.env*)", "Read(./secrets/**)"]
+    "deny": [
+      "Bash(rm -rf ~/vault*)",
+      "Read(./.env*)",
+      "Read(./secrets/**)"
+    ]
   },
-  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -53,6 +56,6 @@
       }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "editorMode": "vim"
 }
