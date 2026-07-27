@@ -7,3 +7,4 @@ else
 end
 
 set -x HOMEBREW_NO_ASK 1
+set -x HOMEBREW_UPGRADE_GREEDY 1
