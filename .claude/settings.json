@@ -1,8 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Read(~/vault/**)",
-      "Write(~/vault/**)",
+      "Edit(~/vault/**)",
       "Bash(cat ~/vault/**)",
       "Bash(ls ~/vault/**)",
       "Bash(find ~/vault/**)",
@@ -14,11 +13,7 @@
       "mcp__para-vault__*",
       "mcp__obsidian__*"
     ],
-    "deny": [
-      "Bash(rm -rf ~/vault*)",
-      "Read(./.env*)",
-      "Read(./secrets/**)"
-    ]
+    "deny": ["Bash(rm -rf ~/vault*)", "Read(./.env*)", "Read(./secrets/**)"]
   },
   "hooks": {
     "Notification": [
@@ -28,6 +23,87 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/tmux-notify.sh"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js notify"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js prompt"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js pre"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js post"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js permreq"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/update.js stop"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/lifecycle.js start"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/Cellar/node/26.5.0/bin/node /Users/robert/.claude/statusbar/lifecycle.js end"
           }
         ]
       }
