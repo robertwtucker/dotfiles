@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -19,16 +22,17 @@
   "git_panel": {
     "dock": "left"
   },
-  "icon_theme": "Catppuccin Mocha",
-  "features": {
-    "edit_prediction_provider": "copilot"
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
   "show_whitespaces": "all",
   "preferred_line_length": 100,
   "tab_size": 2,
   "agent": {
     "dock": "right",
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4.5"
@@ -36,7 +40,11 @@
     "favorite_models": [],
     "model_parameters": []
   },
-  "theme": "Tokyo Night Moon",
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night"
+  },
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
