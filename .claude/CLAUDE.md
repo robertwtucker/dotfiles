@@ -63,6 +63,21 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 5. Backlog Lives in Issues, Not Prose
+
+**When a plan closes or a review parks a deferred item, file it as a GH issue — not as a bullet in a project doc, vault note, or SDD ledger.** Prose captures rot; issues have lifecycle, labels, and discoverability.
+
+Rules:
+
+-   **Actionable-shaped observation → GH issue, at surface time.** Includes: parked minors from reviews, deferred items from a plan close, follow-up work called out during a spec/brainstorm. Body carries the receipt — file:line, current behavior, proposed fix, filing context ("surfaced during v0.X final review, not a v0.X blocker").
+-   **Arc, synthesis, decision-with-reasoning, or lightweight context → project doc.** Project docs are for narrative — the "why" behind a release theme, session shape, lessons — not for tracking work items.
+-   **Milestones happen at scoping time, not filing time.** Backlog issues stay unmilestoned. When a brainstorm decides a release's theme, it selects from the labeled backlog and attaches issues to a milestone it just created. Pre-attaching an issue to a hypothetical future milestone commits work that hasn't been scoped, and creates zombie milestones for releases that never happen.
+-   **Project docs' info callouts list issue numbers with one-line hooks, not prose bullets.** The callout is a nav aid pointing to the authoritative surface (the issue tracker), not a duplicate of it.
+
+**Concrete application — SDD closures.** The `superpowers:subagent-driven-development` skill's ledger accumulates a "deferred minors" bucket during the task loop. At plan close, graduate each entry to a GH issue with labels; do not carry the list forward into the project doc as prose. The ledger's job ended when the plan closed.
+
+The failure mode this prevents: parked minors get captured in prose, the entry gets buried, and no one (including future you) surfaces them at the next brainstorm because they weren't in the issue tracker where scoping happens.
+
 ---
 
 ## Obsidian PARA Vault
