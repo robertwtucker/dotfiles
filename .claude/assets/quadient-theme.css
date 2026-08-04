@@ -1,0 +1,274 @@
+/* =====================================================================
+   Quadient Brand Theme  —  v2026.0
+   Synced from: Quadient Global Brand Guidelines | 2026
+   ---------------------------------------------------------------------
+   Self-contained theme for Quadient HTML artifacts (reports, slides,
+   summaries). INLINE this into an artifact's <style> — do not <link> it:
+   these artifacts must survive print-to-PDF, email, offline/air-gapped
+   transfer, and the claude.ai Artifact CSP, none of which tolerate an
+   external stylesheet.
+
+   Brand rules encoded here:
+     • Grey (q-graphite) is dominant. Orange is an ACCENT, never body text.
+     • Orange text/links use the WCAG-safe #CC3400; #FF4200 is for bars,
+       fills, numerals and large display only.
+     • No ALL-CAPS headings/subheads; minimal letter-spacing.
+     • Secondary violet/blue are available but must not compete with orange.
+     • The Quadient logo is NEVER recreated in CSS/SVG — drop the official
+       asset into .q-logo-slot. See the logo note near the end of this file.
+   ===================================================================== */
+
+:root {
+  /* ---- Primary ---- */
+  --q-orange:      #FF4200;   /* accent: bars, fills, numerals, large display */
+  --q-orange-ink:  #CC3400;   /* orange as TEXT / links — AA on white */
+  --q-orange-soft: #fff0eb;   /* orange-tinted callout background */
+  --q-orange-line: #ffd0c0;   /* orange-tinted border */
+
+  /* ---- Graphite / greys (dominant) ---- */
+  --q-graphite:    #374151;   /* primary text + dark grounds */
+  --q-muted:       #5c6371;   /* secondary text */
+  --q-line:        #d1d5db;   /* borders */
+  --q-line-soft:   #eceef1;   /* hairlines */
+  --q-panel:       #f0f1f3;   /* light grey panel / sidebar */
+  --q-code-bg:     #f5f7f8;
+  --q-page:        #ffffff;
+
+  /* ---- Secondary (optional; ≤20-30%, never competing with orange) ---- */
+  --q-violet:      #7536f0;
+  --q-blue:        #05b9f0;
+
+  /* ---- Status ---- */
+  --q-ok:   #2e7d32;  --q-ok-soft:   #e8f3e9;
+  --q-fail: #b3261e;  --q-fail-soft: #fbeae9;
+  --q-warn: #8a6d1a;  --q-warn-soft: #fdf7e3;
+
+  /* ---- Type ---- */
+  --q-font-head: "Montserrat", "Calibri", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --q-font-body: "Quicksand", "Calibri", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --q-font-mono: "SF Mono", "Consolas", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--q-font-body);
+  color: var(--q-graphite);
+  background: var(--q-page);
+  line-height: 1.55;          /* brand: ~1.5 for body copy */
+  font-size: 16px;            /* brand: 16px base, 1.25 modular ratio */
+  margin: 0;
+}
+
+.q-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 44px 48px 64px;
+}
+
+/* ---- Headings ---------------------------------------------------------
+   h1 carries the signature Quadient orange left-bar. Headings are graphite,
+   set in the display font, sentence case (never ALL-CAPS).                */
+h1, h2, h3, h4 { font-family: var(--q-font-head); color: var(--q-graphite); }
+
+h1 {
+  font-size: 31px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 8px;
+  padding-left: 18px;
+  border-left: 6px solid var(--q-orange);   /* signature motif */
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 34px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--q-line);
+}
+h2 .q-num {                    /* section numeral */
+  display: inline-block;
+  color: var(--q-orange);
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+h3 { font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+
+p { margin: 10px 0; }
+
+/* ---- Masthead --------------------------------------------------------- */
+.q-masthead {
+  border-bottom: 2px solid var(--q-line);
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+}
+.q-eyebrow {                   /* sentence case, minimal tracking (brand) */
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--q-orange-ink);
+  margin: 0 0 8px;
+}
+.q-subtitle { color: var(--q-muted); font-size: 15.5px; margin: 6px 0 0; }
+
+/* ---- Meta grid -------------------------------------------------------- */
+.q-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--q-line);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 22px 0 30px;
+}
+.q-meta-grid > div {
+  padding: 10px 14px;
+  border-right: 1px solid var(--q-line-soft);
+}
+.q-meta-grid > div:last-child { border-right: none; }
+.q-meta-grid .k {              /* sentence case, no uppercase transform */
+  font-size: 11.5px;
+  color: var(--q-muted);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.q-meta-grid .v { font-size: 14.5px; font-weight: 600; }
+
+/* ---- Callouts --------------------------------------------------------- */
+.q-callout {
+  background: var(--q-orange-soft);
+  border: 1px solid var(--q-orange-line);
+  border-left: 4px solid var(--q-orange);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+.q-callout p:first-child { margin-top: 0; }
+.q-callout p:last-child  { margin-bottom: 0; }
+.q-callout.warn { background: var(--q-warn-soft); border-color: #ecd9a0; border-left-color: var(--q-warn); }
+.q-callout.fail { background: var(--q-fail-soft); border-color: #f0c8c5; border-left-color: var(--q-fail); }
+.q-callout.info { background: #e7f7fe; border-color: #bfe8fb; border-left-color: var(--q-blue); }  /* optional (q-blue) */
+
+/* ---- Stat tiles ------------------------------------------------------- */
+.q-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0 6px;
+}
+.q-stat {
+  border: 1px solid var(--q-line);
+  border-radius: 6px;
+  padding: 14px;
+  text-align: center;
+}
+.q-stat .big { font-family: var(--q-font-head); font-size: 30px; font-weight: 800; line-height: 1; color: var(--q-graphite); }
+.q-stat .lbl { font-size: 11.5px; color: var(--q-muted); margin-top: 6px; }
+.q-stat.ok     .big { color: var(--q-ok); }
+.q-stat.fail   .big { color: var(--q-fail); }
+.q-stat.accent .big { color: var(--q-orange-ink); }   /* orange-as-text → a11y variant */
+
+/* ---- Tables ----------------------------------------------------------- */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+th {                          /* sentence case, no uppercase, tracking 0 */
+  text-align: left;
+  background: var(--q-code-bg);
+  border-bottom: 2px solid var(--q-line);
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--q-muted);
+}
+td { padding: 8px 10px; border-bottom: 1px solid var(--q-line-soft); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+
+/* ---- Pills ------------------------------------------------------------ */
+.q-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.q-pill.ok   { background: var(--q-ok-soft);   color: var(--q-ok); }
+.q-pill.fail { background: var(--q-fail-soft); color: var(--q-fail); }
+.q-pill.wait { background: #fff3d6;            color: var(--q-warn); }
+
+/* ---- Flow diagram ----------------------------------------------------- */
+.q-flow { display: flex; align-items: stretch; margin: 18px 0; flex-wrap: wrap; }
+.q-node {
+  flex: 1 1 150px;
+  border: 1px solid var(--q-line);
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: #fff;
+  min-width: 150px;
+}
+.q-node.hi { border-color: var(--q-orange); background: var(--q-orange-soft); }
+.q-node .title { font-family: var(--q-font-head); font-weight: 700; font-size: 13.5px; margin-bottom: 3px; }
+.q-node .desc  { font-size: 12.5px; color: var(--q-muted); }
+.q-arrow { align-self: center; color: var(--q-orange); font-weight: 800; font-size: 20px; padding: 0 10px; }
+
+/* ---- Figures ---------------------------------------------------------- */
+figure { margin: 18px 0; border: 1px solid var(--q-line); border-radius: 6px; overflow: hidden; }
+figure img { width: 100%; display: block; }
+figcaption {
+  font-size: 12px;
+  color: var(--q-muted);
+  padding: 8px 12px;
+  background: var(--q-code-bg);
+  border-top: 1px solid var(--q-line-soft);
+}
+figcaption b { color: var(--q-graphite); }
+
+/* ---- Inline code / mono ----------------------------------------------- */
+code, .q-mono { font-family: var(--q-font-mono); font-size: 12.5px; }
+code {
+  background: var(--q-code-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ---- Links ------------------------------------------------------------ */
+a { color: var(--q-orange-ink); }
+
+/* ---- Lists ------------------------------------------------------------ */
+ul { margin: 10px 0; padding-left: 22px; }
+li { margin: 5px 0; }
+
+/* ---- Footer / notes --------------------------------------------------- */
+.q-footer {
+  margin-top: 42px;
+  padding-top: 14px;
+  border-top: 1px solid var(--q-line);
+  font-size: 11.5px;
+  color: var(--q-muted);
+}
+.q-note { font-size: 12.5px; color: var(--q-muted); font-style: italic; }
+
+/* ---- Logo slot -------------------------------------------------------- */
+/* The Quadient logo is an official asset and is NEVER recreated here.
+   Place the approved mark inside .q-logo-slot (e.g. <img>). Clear space is
+   reserved at ≥ half the icon height per the guidelines. Color logo on
+   white/black grounds only; use the white logo on orange/graphite grounds. */
+.q-logo-slot {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;          /* ≈ brand minimum logo height */
+  padding: 12px;             /* clear space */
+}
+.q-logo-slot img { height: 32px; width: auto; display: block; }
+
+/* ---- Print ------------------------------------------------------------ */
+@media print {
+  /* keep brand tints/fills when printing to PDF (browsers drop them by default) */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .q-wrap { max-width: none; padding: 0 8mm; }
+  h2 { break-after: avoid; }
+  figure, table, .q-callout, .q-stat-row, .q-flow { break-inside: avoid; }
+  a { color: var(--q-graphite); text-decoration: none; }
+  body { font-size: 11pt; }
+}
+@page { margin: 14mm 12mm; }

@@ -77,3 +77,15 @@ Workflows are implemented as skills, which load on demand:
 -   `session-transcript` — archive substantial sessions to `3-Resources/Sessions/Claude/`
 
 **Material actions on a project require a same-session `_project.md` update.** If a session ships an artifact, makes an external commitment (email, message, decision shared with a stakeholder), changes status, or invalidates `next-action`, proactively offer to log it before ending. Don't wait for daily review to catch it — the propagation gap is a known failure mode.
+
+## Quadient HTML Artifacts
+
+When building a **Quadient work or customer-facing HTML artifact** (reports, slides, solution summaries, spec sheets — anything representing Quadient or shown to a partner/customer), style it with the canonical Quadient brand theme at `~/.claude/assets/quadient-theme.css`:
+
+-   **Inline** the theme into the artifact's own `<style>` — do NOT `<link>` it. These artifacts must survive print-to-PDF, email, offline/air-gapped transfer, and the claude.ai Artifact CSP, none of which tolerate an external stylesheet.
+-   Read the file each time (it is the source of truth and may have been updated) and follow the brand rules encoded in its header comment: grey-dominant, orange as accent only (never body text; orange text/links use `#CC3400`), no ALL-CAPS headings, minimal letter-spacing, and **never recreate the Quadient logo** — use `.q-logo-slot` for the official asset.
+-   Fonts resolve via the theme's Calibri-led fallback stack (self-contained, no web-font requests).
+
+**Do NOT** auto-apply this to personal/vault visualizations, quick data viz, or throwaway tooling HTML — only to Quadient communications. When unsure whether an artifact is "Quadient-facing," ask.
+
+The theme is versioned (`v2026.0`, synced from the 2026 Brand Guidelines). If the guidelines change, update the one canonical file and bump its version stamp; new artifacts pick it up automatically.
